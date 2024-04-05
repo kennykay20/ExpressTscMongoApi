@@ -1,6 +1,7 @@
 import crypto from "crypto";
+import { config } from '../config';
 
-const SECRET = "EXPRESS-TSC-REST-API";
+const SECRET = config.secret;
 
 export const random = () => crypto.randomBytes(128).toString("base64");
 export const authenticationPassword = (salt: any, password: string) => {

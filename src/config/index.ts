@@ -16,7 +16,8 @@ const schemaValidate = joi
     REDIS_PORT: joi.number(),
     REDIS_PASSWORD: joi.string(),
     PORT: joi.number().required(),
-    MONGO_URL: joi.string().required()
+    MONGO_URL: joi.string().required(),
+    SECRET: joi.string()
   })
   .unknown()
   .required();
@@ -34,5 +35,6 @@ export const config = {
     HOST: envVars.REDIS_HOST,
     PORT: envVars.REDIS_PORT,
     PASSWORD: envVars.REDIS_PASSWORD
-  }
+  },
+  secret: envVars.SECRET
 };
