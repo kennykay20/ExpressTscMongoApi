@@ -28,7 +28,7 @@ export class CacheService {
     key: string,
     data: string,
     duration?: number
-  ): Promise<string | any> => {
+  ): Promise<any> => {
     try {
       await this.client.connect();
       if (duration) {
@@ -41,7 +41,7 @@ export class CacheService {
     }
   };
 
-  get = async (key: string): Promise<string | any> => {
+  get = async (key: string): Promise<any> => {
     try {
       await this.client.connect();
       return this.client.get(key);
@@ -50,7 +50,7 @@ export class CacheService {
     }
   };
 
-  del = async (key: string): Promise<any> => {
+  del = async (key: string): Promise<unknown> => {
     return this.client.del(key);
   };
 
